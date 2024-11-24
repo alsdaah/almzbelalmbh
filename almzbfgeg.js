@@ -790,7 +790,7 @@ function addLoader() {
 
 function getPage(pages) {
     var i = parseInt(userset[pos.s.fp]) - 1 + pagesLoad;
-    $.get(link[0] + window.game_data.village.id + "&order=" + userset[pos.s.order] + "&dir" + userset[pos.s.dir] + "&Farm_page=" + i + "&screen=main", function(data) {
+    $.get(link[0] + window.game_data.village.id + "&order=" + userset[pos.s.order] + "&dir" + userset[pos.s.dir] + "&Farm_page=" + i + "&screen=am_farm", function(data) {
         var v = $(data);
         var subFaTable = $('#plunder_list', v);
         var rows = $(subFaTable)
@@ -833,7 +833,7 @@ function doTime(millsec) {
 }
 
 function checkPage() {
-    if (!(window.game_data.screen === 'main')) {
+    if (!(window.game_data.screen === 'am_farm')) {
         getFA();
     }
 }
@@ -990,7 +990,7 @@ function openLoader() {
     setTimeout(function() {
         if (incrementalSwitchPage <= currentIncremental) {
             UI.ErrorMessage('Un problÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Â¨me a ÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Â©tÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Â© rencontrÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Â©, la page va se recharger.');
-            var currentURL = document.URL.split("village=") + "village=" + game_data.village.id + "&screen=main";
+            var currentURL = document.URL.split("village=") + "village=" + game_data.village.id + "&screen=am_farm";
             window.location.href = currentURL;
             console.log("La page a mis trop de temps ÃƒÆ’Ã†â€™  se charger.")
         }
